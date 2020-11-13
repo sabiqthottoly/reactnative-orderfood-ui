@@ -6,7 +6,7 @@ import { useFonts } from 'expo-font';
 import { createStackNavigator } from 'react-navigation-stack';
 
 
-function Login(){
+function Login(props){
     let [fontsLoaded] = useFonts({
         'Overpass-Black': require('../assets/fonts/Overpass-Black.ttf'),
         'Overpass-ExtraLight': require('../assets/fonts/Overpass-ExtraLight.ttf'),
@@ -71,7 +71,7 @@ function Login(){
        </View>
        
 
-        <TouchableOpacity style={{backgroundColor:'white',elevation:10,flexDirection:'row',justifyContent:'center',alignItems:'center',borderRadius:15}}>
+        <TouchableOpacity onPress={()=>props.navigation.navigate("HomeStack")} style={{backgroundColor:'white',elevation:10,flexDirection:'row',justifyContent:'center',alignItems:'center',borderRadius:15}}>
             <Text style={{ fontFamily: 'Overpass-Black',fontSize:17,margin:20}}>Log In</Text>
             <View style={{backgroundColor:'black',borderRadius:15}}>
                 <Image
